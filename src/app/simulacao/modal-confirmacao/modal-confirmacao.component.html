@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="header">
+		<span>Confirme os valores e o números de parcelas para contratação.</span>
+	</div>
+	<div class="content">
+		<div class="row">
+			<span class="title"> Valor das parcelas: </span>
+			<div class="divider"></div>
+			<span>{{
+				repostaSimulacao.valorParcelas | currency : 'BRL' : true
+			}}</span>
+		</div>
+		<div class="row">
+			<span class="title"> Número de parcelas: </span>
+			<div class="divider"></div>
+			<span>{{ repostaSimulacao.numeroParcelas }}</span>
+		</div>
+		<div class="row">
+			<span class="title"> Total do valor com juros: </span>
+			<div class="divider"></div>
+			<span>{{ repostaSimulacao.valorTotal | currency : 'BRL' : true }}</span>
+		</div>
+	</div>
+	<div class="containerButton">
+		<button mat-stroked-button mat-dialog-close color="basic">Cancelar</button>
+		<button mat-raised-button color="primary" (click)="confirmation()">
+			Confirmar Empréstimo
+		</button>
+	</div>
+</div>

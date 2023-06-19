@@ -1,0 +1,71 @@
+<div class="container">
+	<div class="title">
+		<h4>Simulação</h4>
+	</div>
+	<div class="card">
+		<div class="cardContent">
+			<span class="subTitle">
+				Informe o valor e o número de parcelas desejado.</span
+			>
+			<form novalidate [formGroup]="formulario" class="form" *ngIf="formulario">
+				<mat-form-field class="input">
+					<mat-label>Nome Completo</mat-label>
+					<input matInput type="text" name="nome" formControlName="nome" />
+				</mat-form-field>
+				<mat-form-field class="input">
+					<mat-label>Valor Desejado</mat-label>
+					<input
+						currencyMask
+						[options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' ,  align: 'left', }"
+						matInput
+						type="text"
+						formControlName="valorDesejado"
+					/>
+				</mat-form-field>
+				<mat-form-field class="input">
+					<mat-label>Número De Parcelas </mat-label>
+					<input matInput formControlName="parcelas" type="number" />
+				</mat-form-field>
+			</form>
+			<div class="botaoConainer">
+				<button
+					(click)="onSubmit()"
+					mat-raised-button
+					[disabled]="formulario.invalid"
+					color="primary"
+				>
+					Simular empréstimo
+				</button>
+			</div>
+		</div>
+		<br />
+		<div class="cardFooter">
+			<table>
+				<tr>
+					<th class="borderRight">Valor das parcelas</th>
+					<th class="borderRight">Número de parcelas</th>
+					<th>Total do valor com juros</th>
+				</tr>
+				<tr>
+					<td class="borderRight">
+						{{ responseData.valorParcelas | currency : 'BRL' : true }}
+					</td>
+					<td class="borderRight">
+						{{ responseData.numeroParcelas }}
+					</td>
+					<td>{{ responseData.valorTotal | currency : 'BRL' : true }}</td>
+				</tr>
+			</table>
+			<div class="botaoConainer">
+				<button
+					disabled="{{ desabilitarConfirmacao }}"
+					(click)="onConfirmation()"
+					mat-raised-button
+					color="primary"
+				>
+					Confirmação
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="card">
+		<div class="cardContent">
+			<span class="subTitle">
+				O empréstimo foi realizado com sucesso! Veja abaixo o que você
+				contratou:</span
+			>
+			<div>
+				<div class="row">
+					<span class="title"> Valor das parcelas: </span>
+					<div class="divider"></div>
+					<span>{{ contratacao.valorParcelas | currency : 'BRL' : true }}</span>
+				</div>
+				<div class="row">
+					<span class="title"> Número de parcelas: </span>
+					<div class="divider"></div>
+					<span>{{ contratacao.numeroParcelas }}</span>
+				</div>
+				<div class="row">
+					<span class="title"> Total do valor com juros: </span>
+					<div class="divider"></div>
+					<span>{{ contratacao.valorTotal | currency : 'BRL' : true }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

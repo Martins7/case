@@ -1,0 +1,55 @@
+.container {
+	padding: 0 6%;
+	height: 90%;
+	display: flex;
+	.card {
+		width: 70%;
+		height: 70%;
+		background: #ffffff;
+		border-radius: 40px;
+		margin: auto;
+
+		.cardContent {
+			width: 100%;
+			height: 65%;
+			display: flex;
+			flex-direction: column;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+
+			.subTitle {
+				font-weight: 700;
+				font-size: 20x;
+				line-height: 24px;
+				letter-spacing: 0.18px;
+				color: black;
+				display: inline-block;
+				text-align: center;
+			}
+
+			.row {
+				display: table;
+				width: 100%;
+				margin: 3% 0;
+
+				span {
+					display: table-cell;
+					font-size: 16px;
+					line-height: 24px;
+				}
+
+				.title {
+					width: 45%;
+					text-align: end;
+					color: black;
+				}
+
+				.divider {
+					display: table-cell;
+					width: 5%;
+				}
+			}
+		}
+	}
+}
